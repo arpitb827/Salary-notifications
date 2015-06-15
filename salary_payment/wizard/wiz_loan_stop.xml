@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+<data>
+
+		  
+		 <record id="wiz_loan_stop_form" model="ir.ui.view">
+		            <field name="name">wiz.loan.stop.form</field>
+		            <field name="model">wiz.loan.stop</field>
+		            <field name="type">form</field>
+		            <field name="arch" type="xml">
+		                <form string="Loan Stop">
+	                      <group colspan="4" col="4">
+	                             
+								<field name="loan_id"  colspan="2" />
+<!--								 <field name="month"  colspan="2" />-->
+<!--								 <field name="year_id"  colspan="2" />-->
+								 <field name="emp_id"  colspan="2" />
+								 <field name="type"  colspan="2" />
+	                        	<separator colspan="4"/>
+	                        	<group colspan ="4">
+	                        	<newline/>
+	                        	
+	                        	  <button icon='gtk-cancel' special="cancel" string="_Cancel" />
+	                        	<button name="stop_done" string="Done" type="object" icon="gtk-ok"   />
+	                        </group>
+	                        </group>
+	                       
+		                </form>
+		            </field>
+		        </record>
+		        
+		        <record id="action_loan_stop" model="ir.actions.act_window">
+		            <field name="name">Loan Stop</field>
+		            <field name="res_model">wiz.loan.stop</field>
+		            <field name="type">ir.actions.act_window</field>
+		            <field name="view_type">form</field>
+		            <field name="view_mode">form</field>
+		            <field name="target">new</field>
+		            <field name="view_id" ref="wiz_loan_stop_form"/>
+		        </record>
+		        
+		        
+				
+		 <menuitem id="menu_loan_stop" action="action_loan_stop" parent="menu_hr_deduction" sequence="7" name=" Loan EMI Stop"/>		        		  
+		  
+		  
+		        
+</data>
+</openerp>

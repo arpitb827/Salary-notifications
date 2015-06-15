@@ -1,0 +1,104 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_salary_payment manager,salary.payment,model_salary_payment,base.group_salary_manager,1,1,1,0
+access_salary_payment_line compliance,salary.payment.line,model_salary_payment_line,base.compliance,1,0,0,0
+access_salary_payment_line manager,salary.payment.line,model_salary_payment_line,base.group_salary_manager,1,1,1,0
+access_salary_payment_line hr user,salary.payment.line,model_salary_payment_line,base.group_hr_user,1,0,0,0
+access_salary_payment_line hr manager,salary.payment.line,model_salary_payment_line,base.group_hr_manager,1,0,0,0
+access_payment_management_advance manager,payment.management.advance,model_payment_management_advance,base.group_salary_manager,1,1,1,0
+access_payment_management_panalty manager,payment.management.panalty,model_payment_management_panalty,base.group_salary_manager,1,1,1,0
+access_payment_management_epf manager,payment.management.epf,model_payment_management_epf,base.group_salary_manager,1,1,1,0
+access_payment_management_tds manager,payment.management.tds,model_payment_management_tds,base.group_salary_manager,1,1,1,0
+access_payment_management_reward manager,payment.management.reward,model_payment_management_reward,base.group_salary_manager,1,1,1,0
+access_payment_management_done manager,payment.management.done,model_payment_management_done,base.group_salary_manager,1,1,1,0
+access_payment_management_outside manager,payment.management.outside,model_payment_management_outside,base.group_salary_manager,1,1,1,0
+access_payment_management_loan manager,payment.management.loan,model_payment_management_loan,base.group_salary_manager,1,1,1,0
+access_payment_management_adjust manager,payment_management_adjust,model_payment_management_adjust,base.group_salary_manager,1,1,1,0
+access_payment_management_bonus manager,payment_management_bonus,model_payment_management_bonus,base.group_salary_manager,1,1,1,0
+access_payment_management_conveyance manager,payment_management_conveyance,model_payment_management_conveyance,base.group_salary_manager,1,1,1,0
+access_payment_management_miscellaneous manager,payment_management_miscellaneous,model_payment_management_miscellaneous,base.group_salary_manager,1,1,1,0
+access_payment_payment_management_security manager,payment_management_security,model_payment_management_security,base.group_salary_manager,1,1,1,0
+access_payment_management_telephone manager,payment_management_telephone,model_payment_management_telephone,base.group_salary_manager,1,1,1,0
+access_payment_management_adjust1 manager,payment_management_adjust1,model_payment_management_adjust1,base.group_salary_manager,1,1,1,0
+access_payment_management_previous_advance manager,payment_management_previous_advance,model_payment_management_previous_advance,base.group_salary_manager,1,1,1,0
+access_hr_employee_user,hr.employee salary,model_hr_employee,base.group_salary_user,1,0,0,0
+access_hr_employee_manager,hr.employee salary,model_hr_employee,base.group_salary_manager,1,0,0,0
+access_hr_employee_reset,hr.employee salary,model_hr_employee,base.group_salary_reset,1,1,0,0
+access_payment_management_advance user,payment.management.advance,model_payment_management_advance,base.group_salary_user,1,0,0,0
+access_payment_management_panalty user,payment.management.panalty,model_payment_management_panalty,base.group_salary_user,1,0,0,0
+access_payment_management_epf user,payment.management.epf,model_payment_management_epf,base.group_salary_user,1,0,0,0
+access_payment_management_tds user,payment.management.tds,model_payment_management_tds,base.group_salary_user,1,0,0,0
+access_payment_management_reward user,payment.management.reward,model_payment_management_reward,base.group_salary_user,1,0,0,0
+access_payment_management_outside user,payment.management.outside,model_payment_management_outside,base.group_salary_user,1,0,0,0
+access_payment_management_loan user,payment.management.loan,model_payment_management_loan,base.group_salary_user,1,0,0,0
+access_payment_management_bonus user,payment_management_bonus,model_payment_management_bonus,base.group_salary_user,1,0,0,0
+access_payment_management_conveyance user,payment_management_conveyance,model_payment_management_conveyance,base.group_salary_user,1,0,0,0
+access_payment_management_miscellaneous user,payment_management_miscellaneous,model_payment_management_miscellaneous,base.group_salary_user,1,0,0,0
+access_payment_payment_management_security user,payment_management_security,model_payment_management_security,base.group_salary_user,1,0,0,0
+access_payment_management_telephone user,payment_management_telephone,model_payment_management_telephone,base.group_salary_user,1,0,0,0
+access_payment_management_previous_advance user,payment_management_previous_advance,model_payment_management_previous_advance,base.group_salary_user,1,0,0,0
+access_salary_payment manager erp user,salary.payment,model_salary_payment,base.group_erp_user,1,1,1,1
+access_salary_payment_line  erp user,salary.payment.line,model_salary_payment_line,base.group_erp_user,1,1,1,1
+access_payment_management_advance  erp user,payment.management.advance,model_payment_management_advance,base.group_erp_user,1,1,1,1
+access_payment_management_panalty  erp user,payment.management.panalty,model_payment_management_panalty,base.group_erp_user,1,1,1,1
+access_payment_management_epf  erp user,payment.management.epf,model_payment_management_epf,base.group_erp_user,1,1,1,1
+access_payment_management_tds  erp user,payment.management.tds,model_payment_management_tds,base.group_erp_user,1,1,1,1
+access_payment_management_reward  erp user,payment.management.reward,model_payment_management_reward,base.group_erp_user,1,1,1,1
+access_payment_management_done  erp user,payment.management.done,model_payment_management_done,base.group_erp_user,1,1,1,1
+access_payment_management_outside  erp user,payment.management.outside,model_payment_management_outside,base.group_erp_user,1,1,1,1
+access_payment_management_loan  erp user,payment.management.loan,model_payment_management_loan,base.group_erp_user,1,1,1,1
+access_payment_management_adjust  erp user,payment_management_adjust,model_payment_management_adjust,base.group_erp_user,1,1,1,1
+access_payment_management_bonus  erp user,payment_management_bonus,model_payment_management_bonus,base.group_erp_user,1,1,1,1
+access_payment_management_conveyance  erp user,payment_management_conveyance,model_payment_management_conveyance,base.group_erp_user,1,1,1,1
+access_payment_management_miscellaneous  erp user,payment_management_miscellaneous,model_payment_management_miscellaneous,base.group_erp_user,1,1,1,1
+access_payment_payment_management_security  erp user,payment_management_security,model_payment_management_security,base.group_erp_user,1,1,1,1
+access_payment_management_telephone  erp user,payment_management_telephone,model_payment_management_telephone,base.group_erp_user,1,1,1,1
+access_payment_management_previous_advance  erp user,payment_management_previous_advance,model_payment_management_previous_advance,base.group_erp_user,1,1,1,1
+access_payment_management_adjust1 erp user,payment_management_adjust1,model_payment_management_adjust1,base.group_erp_user,1,1,1,1
+access_daily_salary manager,daily_salary,model_daily_salary,base.group_salary_manager,1,1,1,1
+access_daily_salary erp user,daily_salary,model_daily_salary,base.group_erp_user,1,1,1,1
+access_daily_salary_line manager,daily_salary_line,model_daily_salary_line,base.group_salary_manager,1,1,1,0
+access_daily_salary_line erp user,daily_salary_line,model_daily_salary_line,base.group_erp_user,1,1,1,1
+access_budget_salary_line manager,budget_salary_line,model_budget_salary_line,base.group_salary_manager,1,1,1,0
+access_budget_salary_line erp user,budget_salary_line,model_budget_salary_line,base.group_erp_user,1,1,1,1
+access_employee_salary manager,employee_salary,model_employee_salary,base.group_salary_manager,1,1,1,0
+access_employee_salary erp user,employee_salary,model_employee_salary,base.group_erp_user,1,1,1,1
+access_employee_salary hr user,employee_salary,model_employee_salary,base.group_hr_user,1,0,0,0
+access_employee_salary hr manager,employee_salary,model_employee_salary,base.group_hr_manager,1,0,0,0
+access_employee_salary compliance user,employee_salary,model_employee_salary,base.compliance,1,0,0,0
+access_employee_salary super user,employee_salary,model_employee_salary,base.super,1,0,0,0
+access_payment_management_advance audit,payment.management.advance,model_payment_management_advance,base.group_audit,1,0,0,0
+access_payment_management_panalty audit,payment.management.panalty,model_payment_management_panalty,base.group_audit,1,0,0,0
+access_payment_management_epf audit,payment.management.epf,model_payment_management_epf,base.group_audit,1,0,0,0
+access_payment_management_tds audit,payment.management.tds,model_payment_management_tds,base.group_audit,1,0,0,0
+access_payment_management_reward audit,payment.management.reward,model_payment_management_reward,base.group_audit,1,0,0,0
+access_payment_management_done audit,payment.management.done,model_payment_management_done,base.group_audit,1,0,0,0
+access_payment_management_outside audit,payment.management.outside,model_payment_management_outside,base.group_audit,1,0,0,0
+access_payment_management_loan audit,payment.management.loan,model_payment_management_loan,base.group_audit,1,0,0,0
+access_payment_management_adjust audit,payment_management_adjust,model_payment_management_adjust,base.group_audit,1,0,0,0
+access_payment_management_bonus audit,payment_management_bonus,model_payment_management_bonus,base.group_audit,1,0,0,0
+access_payment_management_conveyance audit,payment_management_conveyance,model_payment_management_conveyance,base.group_audit,1,0,0,0
+access_payment_management_miscellaneous audit,payment_management_miscellaneous,model_payment_management_miscellaneous,base.group_audit,1,0,0,0
+access_payment_payment_management_security audit,payment_management_security,model_payment_management_security,base.group_audit,1,0,0,0
+access_payment_management_telephone audit,payment_management_telephone,model_payment_management_telephone,base.group_audit,1,0,0,0
+access_payment_management_adjust1 audit,payment_management_adjust1,model_payment_management_adjust1,base.group_audit,1,0,0,0
+access_payment_management_previous_advance audit,payment_management_previous_advance,model_payment_management_previous_advance,base.group_audit,1,0,0,0
+access_salary_payment manager audit,salary.payment,model_salary_payment,base.group_audit,1,0,0,0
+access_salary_payment_line  audit,salary.payment.line,model_salary_payment_line,base.group_audit,1,1,1,0
+access_loan_deduction_user,loan.deduction user,model_loan_deduction,base.group_salary_user,1,0,0,0
+access_loan_deduction_manager,loan.deduction manager,model_loan_deduction,base.group_salary_manager,1,1,1,0
+access_loan_deduction_line_manager,Loan.deduction.line manager,model_loan_deduction_line,base.group_salary_manager,1,1,1,0
+access_security_deposit_manager,security.deposit manager,model_security_deposit,base.group_salary_manager,1,1,1,0
+access_hr_employee_deduction_manager,hr.employee manager,hr.model_hr_employee,base.group_salary_manager,1,1,0,0
+access_loan_deduction_line user,Loan.deduction.line manager,model_loan_deduction_line,base.group_salary_user,1,0,0,0
+access_security_deposit user,security_deposit manager,model_security_deposit,base.group_salary_user,1,0,0,0
+access_hr_employee deduction user,hr.employee manager,hr.model_hr_employee,base.group_salary_user,1,0,0,0
+access_security_deposit_line_manager,security.deposit.line manager,model_security_deposit_line,base.group_salary_manager,1,1,1,0
+access_security_deposit_line user,security.deposit.line manager,model_security_deposit_line,base.group_salary_user,1,0,0,0
+access_loan_deduction erp user,loan.deduction user,model_loan_deduction,base.group_erp_user,1,1,1,1
+access_loan_deduction_line erp user,Loan.deduction.line manager,model_loan_deduction_line,base.group_erp_user,1,1,1,1
+access_security_deposit erp user,security.deposit manager,model_security_deposit,base.group_erp_user,1,1,1,1
+access_security_deposit_line erp user,security.deposit.line manager,model_security_deposit_line,base.group_erp_user,1,1,1,1
+access_employee_check_deduction manager,employee.check.deduction,model_employee_check_deduction,base.group_salary_manager,1,1,1,0
+access_employee_check_deduction erp user,employee.check.deduction,model_employee_check_deduction,base.group_erp_user,1,1,1,1
+access_wiz_salary_payment_report manager,wiz.salary.payment.report,model_wiz_salary_payment_report,base.deptt_budget_group,1,1,1,0
+access_wiz_salary_payment_report erp user,wiz.salary.payment.report,model_wiz_salary_payment_report,base.group_erp_user,1,1,1,1

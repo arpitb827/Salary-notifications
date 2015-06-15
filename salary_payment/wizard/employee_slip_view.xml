@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+	  <report id="employee_payslip_id" 
+					model="employee.slip" 
+					name="payslip.report" 
+					rml="salary_payment/report/payslip.rml"
+					string="Pay slip"
+					auto="False" menu="False"/>
+					
+	 <report id="employee_paybill_id" 
+					model="employee.slip" 
+					name="paybill.report" 
+					rml="salary_payment/report/paybill.rml"
+					string="Pay bill"
+					auto="False" menu="False"/>
+	
+	 <report id="employee_new_paybill_id" 
+					model="employee.slip" 
+					name="new.paybill.report" 
+					rml="salary_payment/report/new_paybill.rml"
+					string="New Pay Bill"
+					auto="False" menu="False"/>
+	
+	
+	
+		<record id="employee_slip_form" model="ir.ui.view">
+			<field name="name">Employee Slip</field>
+			<field name="model">employee.slip</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<field name="employee_ids" colspan="4" nolabel="1"/>
+				 <field name="report_type" />
+				<button string="Print" name="get_pdf" type="object"/>
+			</field>
+				
+		</record>
+		
+		<record id="employee_slip_action" model="ir.actions.act_window">
+		   		<field name="name">Employee Slip</field>
+	            <field name="type">ir.actions.act_window</field>
+	            <field name="res_model">employee.slip</field>
+	            <field name="view_mode">form</field>
+	            <field name="view_type">form</field>
+	            <field name="target">new</field>
+	            <field name="view_id" ref="employee_slip_form"/>  
+       </record>
+       
+       <menuitem id="salary_slip_menu" parent="menu_hr_salary" name="Employee Salary Slip" action="employee_slip_action" sequence="13" />
+       
+	</data>
+</openerp>

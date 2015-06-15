@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <record model="ir.ui.view" id="security_deposit_search_view">
+            <field name="name">Security Deposit</field>
+            <field name="model">security.deposit</field>
+            <field name="type">search</field>
+            <field name="arch" type="xml">
+                <search string="security deposit">
+                    <field name="emp_id" />
+					<field name="loan_amt"/>
+					<field name="emi"/>
+					<field name="period"/>
+                </search>
+            </field>
+        </record>
+    	<record id="security_deposit_tree" model="ir.ui.view">
+			<field name="name">security.deposit.tree</field>
+			<field name="model">security.deposit</field>
+			<field name="type">tree</field>
+			<field name="arch" type="xml">
+				<tree>
+					<field name="name"/>
+					<field name="emp_id" />
+					<field name="loan_amt"/>
+					<field name="emi"/>
+					<field name="period"/>
+					<field name="state" invisible ="1"/>
+					<button name="calculate_month" states ="draft" string="confirm" type="object" icon="gtk-go-forward" colspan="2"/>
+				</tree>
+			</field>
+		</record>
+		
+		<record id="security_deposit_form" model="ir.ui.view">
+			<field name="name">security.deposit.form</field>
+			<field name="model">security.deposit</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form>
+					<group col="4" colspan="4">
+					<field name="name"/>
+					<field name="emp_id"  attrs="{'readonly':[('state','in',['done','stop'])]}"/>
+					<field name="loan_amt" on_change="time_period(emi,loan_amt)" attrs="{'readonly':[('state','in',['done','stop'])]}"/>
+					<field name="emi"  on_change="time_period(emi,loan_amt)" attrs="{'readonly':[('state','in',['done','stop'])]}"/>
+					<field name="period" attrs="{'invisible':[('state','in',['draft'])],'readonly':[('state','in',['done','stop'])]}"/>
+					<field name="balance" attrs="{'invisible':[('state','in',['draft'])],'readonly':[('state','in',['done','stop'])]}"/>
+					<field name="state" invisible ="1"/>
+					<label string="" colspan="2"/>
+					<button name="calculate_month" states ="draft" string="confirm" type="object" icon="gtk-go-forward" colspan="2"/>
+					
+					<field name="security_deposit_line" colspan="4" nolabel="1" attrs="{'readonly':[('state','=','stop')]}">
+								<tree editable="top">
+								    <field name="loan_id" readonly="1"/>
+								    <field name="loan_line_amt" attrs="{'readonly':[('state','in',['paid','stop'])]}"/>
+									<button name="balance_paid" states ="not_paid" string="Paid" icon="gtk-go-forward" type="object" colspan="2"/>
+									
+                                    <field name="state"/>
+								</tree>
+					</field>
+					<field name="approved" attrs="{'readonly':[('state','in',['stop'])]}" colspan="2"/>
+					<button name="done_security" string="Stop" states ="draft,done" type="object" icon="gtk-go-forward" colspan="2"/>
+				    </group>
+				</form>
+			</field>
+		</record>
+		<record id="security_deposit_action" model="ir.actions.act_window">
+            <field name="name">Security Deposit</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">security.deposit</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form,tree</field>
+            <field name="view_id" ref="security_deposit_tree"/>
+        </record>
+        
+       <!-- <menuitem id="security_deposit_sub_menu" name="Employee Security Deposit" parent="menu_hr_deduction" action="security_deposit_action"  groups="base.group_salary_manager,base.group_salary_user"/>  -->
+          	
+	</data>
+</openerp>	
+		

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<record id="department_budget_report_form" model="ir.ui.view">
+			<field name="name">department.budget</field>
+			<field name="model">department.budget</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<group colspan="4">
+				<field name="date"/>
+				<field name="filename" colspan="2" invisible="1"/>
+				<field name="dept_id"/>	
+				<field name="month"/>	
+				<field name="year_id"/>	
+				<label string=" " colspan="2"/>
+				<field name="export_data" filename="filename" attrs="{'invisible':[('export_data','=',False)]}"/>
+				<newline/>
+				</group>
+				<group colspan="4">
+				<label string=" " colspan="2"/>
+				<button special="cancel" string="Cancel" icon="gtk-cancel"/>
+				<button string="Get Budget" colspan="1" name="report_get" type="object"/> 
+				</group>
+			</field>
+		</record>
+		
+		<record id="department_budget_report_form_action" model="ir.actions.act_window">
+		   		<field name="name">Budget</field>
+	            <field name="type">ir.actions.act_window</field>
+	            <field name="res_model">department.budget.report</field>
+	            <field name="view_mode">form</field>
+	            <field name="view_type">form</field>
+	            <field name="target">new</field>
+	            <field name="view_id" ref="department_budget_report_form"/>  
+        </record>
+	
+
+	<menuitem id="budget_menu12" parent="hr.sub_menu_hr" name="Department Budget" action="department_budget_report_form_action" sequence="10" />
+	</data>
+</openerp>

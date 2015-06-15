@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+		<record model="ir.ui.view" id="wiz_loan_deducation_form_view">
+        	<field name="name">Loan Deducation Report Form</field>
+            <field name="model">wiz.loan.deducation</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+            	<form string="Approval">
+                   	<group colspan="4">
+                    <field name="employee_id"/>
+                    <field name="year_id"/>
+                    </group>
+                    <newline/>
+                   	<group colspan="4">
+                    <separator colspan="4" />
+                    <label string="" colspan="2"/>
+	                <button icon='gtk-cancel' special="cancel" string="_Cancel" />
+	                <button icon='gtk-forward' name="print_report" type="object" string="Loan Deducation Report" />
+	            	</group>
+	                </form>
+                </field>
+            </record>
+            
+			
+            <record id="action_wiz_loan_deducation" model="ir.actions.act_window">
+                <field name="name">Loan Deducation Report Form</field>
+                <field name="type">ir.actions.act_window</field>
+                <field name="res_model">wiz.loan.deducation</field>
+                <field name="view_type">form</field>
+                <field name="view_mode">form</field>
+                <field name="target">new</field>
+                <field name="view_id" ref="wiz_loan_deducation_form_view"/>
+            </record>
+			<menuitem  id="menu_wiz_loan_deducation" action="action_wiz_loan_deducation" parent="hr.menu_hr_root"  name="Loan Deduction  Report" sequence="20"/>		        
+ 
+    </data>
+</openerp>

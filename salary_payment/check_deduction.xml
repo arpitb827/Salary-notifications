@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp><data>
+
+<record id="check_deduction_search_view" model="ir.ui.view">
+				<field name="name">employee.check.deduction</field>
+				<field name="model">employee.check.deduction</field>
+				<field name="type">search</field>
+				<field name="arch" type="xml">
+				<search string="Check Deduction">
+					<filter string="January" name="January" icon="terp-personal" domain="[('month','=','1')]"  help="January Payment"/>
+					<filter string="February" name="February" icon="terp-personal" domain="[('month','=','2')]"  help="February Payment"/>
+					<filter string="March" name="March" icon="terp-personal" domain="[('month','=','3')]"  help="March Payment"/>
+					<filter string="April" name="April" icon="terp-personal" domain="[('month','=','4')]"  help="April Payment"/>
+					<filter string="May" name="May" icon="terp-personal" domain="[('month','=','5')]"  help="May Payment"/>
+					<filter string="June" name="June" icon="terp-personal" domain="[('month','=','6')]"  help="June Payment"/>
+					<filter string="July" name="July" icon="terp-personal" domain="[('month','=','7')]"  help="July Payment"/>
+					<filter string="August" name="August" icon="terp-personal" domain="[('month','=','8')]"  help="August Payment"/>
+					<filter string="September" name="September" icon="terp-personal" domain="[('month','=','9')]" help="September Payment"/>
+					<filter string="October" name="October" icon="terp-personal" domain="[('month','=','10')]" help="October Payment"/>
+					<filter string="November" name="November" icon="terp-personal" domain="[('month','=','11')]" help="November Payment"/>
+					<filter string="December" name="December" icon="terp-personal" domain="[('month','=','12')]" help="December Payment"/>
+					
+					<newline/>
+					<field name="name"/>
+					<field name="chk_date"/>
+					<field name="year_id" />
+					<field name="year" />
+					<field name="employee_id" string='Name'/>
+					<field name="user_id"/>
+					<field name="type"/>
+					<newline/>
+					<group expand="0" string="Group By...">
+                        <filter string="Name" icon="terp-personal" domain="[]" context="{'group_by':'employee_id'}"/>
+                        <separator orientation="vertical"/>
+                        <filter string="Month" name="month" icon="terp-stock_effects-object-colorize" domain="[]" context="{'group_by':'month'}"/>
+                        <separator orientation="vertical"/>
+                        <filter string="Year" name="year_id" icon="terp-stock_effects-object-colorize" domain="[]" context="{'group_by':'year_id'}"/>
+                      
+                    </group>
+				</search>
+				</field>
+			</record>
+            
+            <record id="check_deduction_tree_view" model="ir.ui.view">
+				<field name="name">employee.check.deduction</field>
+				<field name="model">employee.check.deduction</field>
+				<field name="type">tree</field>
+				<field name="arch" type="xml">
+				<tree string="Check Deduction" editable="top">
+					<field name="employee_id" on_change="onchange_employee(employee_id)" string='Name'/>
+					<field name="month" invisible="1"/>
+					<field name="year_id" invisible="1"/>
+					<field name="year" invisible="1"/>
+					<field name="check_amt" sum="check_amt"/>
+					<field name="chk_date"/>
+					<field name="name" />
+					<field name="type"/>	
+					<field name="user_id"/>
+					<field name="state" invisible="0"/>
+				</tree>
+				</field>
+			</record>
+		
+		
+		<record id="action_check_deduction" model="ir.actions.act_window">
+            <field name="name">Employee Check Deduction</field>
+            <field name="res_model">employee.check.deduction</field>
+            <field name="view_mode">tree</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_id" ref="check_deduction_tree_view"/>
+            <field name="context">{'search_default_year':time.strftime('%Y'),'search_default_January':time.strftime('%m') == '1' and 1,'search_default_February':time.strftime('%m') == '2' and 1,'search_default_March':time.strftime('%m') == '3' and 1,'search_default_April':time.strftime('%m') == '4' and 1,'search_default_May':time.strftime('%m') == '5' and 1,'search_default_June':time.strftime('%m') == '6' and 1,'search_default_July':time.strftime('%m') == '7' and 1,'search_default_August':time.strftime('%m') == '8' and 1,'search_default_September':time.strftime('%m') == '9' and 1,'search_default_October':time.strftime('%m') == '10' and 1,'search_default_November':time.strftime('%m') == '11' and 1,'search_default_December':time.strftime('%m') == '12' and 1}</field>
+            <field name="search_view_id" ref="check_deduction_search_view"/>
+     </record>
+
+<menuitem id="menu_check_deduction" action="action_check_deduction" parent="menu_hr_deduction" sequence="2" name=" Employee Check Dedution"/>		        		  
+
+</data></openerp>

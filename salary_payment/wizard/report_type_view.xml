@@ -1,0 +1,25 @@
+<openerp>
+	<data>
+		<record id="salary_report_type_wizard" model="ir.ui.view">
+			<field name="name">salary.report.type</field>
+			<field name="model">salary.report.type</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form string="Report Type">
+					<field name="name"/>
+					<button type="object" string="Print" name="get_report" colspan="1"/>
+				</form>			
+			</field>
+		</record>
+		
+		<record id="salary_report_type_action" model="ir.actions.act_window">
+		   		<field name="name">Report Type</field>
+	            <field name="type">ir.actions.act_window</field>
+	            <field name="res_model">salary.report.type</field>
+	            <field name="view_mode">form</field>
+	            <field name="view_type">form</field>
+	            <field name="target">new</field>
+	            <field name="view_id" ref="salary_report_type_wizard"/>  
+       </record>
+	</data>
+</openerp>

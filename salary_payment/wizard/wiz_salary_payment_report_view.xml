@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+<data>
+
+		  
+		 <record id="wiz_salary_payment_report_form" model="ir.ui.view">
+		            <field name="name">Salary Report</field>
+		            <field name="model">wiz.salary.payment.report</field>
+		            <field name="type">form</field>
+		            <field name="arch" type="xml">
+		                <form string="Salary Payment">
+	                     	<field name="month_ids" colspan="4" nolabel="1">
+	                     		<tree string="Months">
+	                     			<field name="name"/>
+	                     		</tree>
+	                     	</field>
+	                     	<group colspan="4">
+		                     	<field name="department_id" required="1" colspan="1"/>
+		                     	<button type="object" string="Print" name="salary_payment_report" colspan="1" attrs="{'invisible':[('export_data','!=',False)]}"/>
+				   				<field name="filename" colspan="1" invisible="1"/>
+							   	<field name="export_data" colspan="1" filename="filename" attrs="{'invisible':[('export_data','=',False)]}"/>
+						   	</group>      
+		                </form>
+		            </field>
+		        </record>
+		        
+		        <record id="action_wiz_salary_payment_report" model="ir.actions.act_window">
+		            <field name="name">Salary Report</field>
+		            <field name="res_model">wiz.salary.payment.report</field>
+		            <field name="type">ir.actions.act_window</field>
+		            <field name="view_type">form</field>
+		            <field name="view_mode">form</field>
+		            <field name="target">new</field>
+		            <field name="view_id" ref="wiz_salary_payment_report_form"/>
+		        </record>
+		        
+		 <menuitem id="menu_salary_payment_report" action="action_wiz_salary_payment_report" parent="menu_hr_salary" sequence="22" groups="base.deptt_budget_group" name="Salary Report"/>		        		  
+		  
+		  
+		        
+	</data>
+</openerp>

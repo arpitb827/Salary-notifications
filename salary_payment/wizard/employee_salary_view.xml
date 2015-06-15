@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+<data>
+
+
+			
+			<record id="wiz_salary_payment_form_view" model="ir.ui.view">
+				<field name="name">wiz.salary.payment.form</field>
+				<field name="model">wiz.salary.payment</field>
+				<field name="type">form</field>
+				<field name="arch" type="xml">
+				<form string="Salary">
+					<group col="4" colspan="6">
+						<field name="name" invisible="1"/>
+						<field name="month" on_change="onchange_month(month)"/>
+						<field name="year_id" invisible="1"/>
+						<field name="salary_type" />
+						<field name="employee_id" />
+					</group>
+					<group col="4" colspan="4">
+						<button name="cancel" string="Cancel" special="cancel" icon="gtk-cancel"  />
+						<button string="Calculate Salary" name="calculate_payment" type="object" icon="gtk-go-forward"/>
+						
+					</group>
+					
+					<field name="old_salary_payment_line" mode="tree" nolabel="1" colspan="4">
+					
+						<tree string="Old Salary Line" editable="bottom">
+							<field name="month" invisible="1"/>
+							<field name="year_id" invisible="1"/>
+							<field name="employee_id" />
+							<field name="department_id" />
+							<field name="basic" sum="basic" invisible="1"/>
+							<field name="basic_part1" sum="basic_part1"/>
+							<field name="basic_part2" sum="basic_part2"/>
+							<field name="days" sum="days"/>
+							<field name="days_amount" sum="days_amount"/>
+							<field name="over_time" sum="over_time"/>
+							<field name="overtime_amount" sum="overtime_amount"/>
+							<field name="day_amount" sum="day_amount"/>
+							<field name="day_remaining_amount" sum="day_remaining_amount"/>
+							<field name="total_amount" sum="total_amount" />
+							<field name="previous_advance" sum="previous_advance"/>
+							<field name="current_loan" sum="current_loan"/>
+							<field name="kharcha" sum="advance"/>
+							<field name="loan" sum="loan"/>
+							<field name="epf" sum="epf"/>
+							<field name="tds" invisible="1"/>
+							<field name="panalty" sum="panalty"/>
+							<field name="security" sum="security"/>
+							<field name="telephone" sum="telephone"/>
+							<field name="reward" invisible="1"/>
+							<field name="grand_total" sum="grand_total"/>
+							<field name="rnd_grand_total" sum="rnd_grand_total"/>
+							<field name="difference" sum="difference" />
+							<field name="reason" />
+							<field name="state" invisible="1"/>
+							<field name="salary_type" invisible="1"/>
+							<field name="type"/>
+							<field name="employee_type" invisible="1"/>
+							</tree>
+						</field>
+					
+					
+					<field name="salary_payment_line" mode="tree" nolabel="1" colspan="4">
+					
+						<tree string="New Salary Line" editable="bottom">
+							<field name="month" invisible="1"/>
+							<field name="year_id" invisible="1"/>
+							<field name="employee_id" />
+							<field name="department_id" />
+							<field name="basic" sum="basic" invisible="1"/>
+							<field name="basic_part1" sum="basic_part1"/>
+							<field name="basic_part2" sum="basic_part2"/>
+							<field name="days" sum="days"/>
+							<field name="days_amount" sum="days_amount"/>
+							<field name="over_time" sum="over_time"/>
+							<field name="overtime_amount" sum="overtime_amount"/>
+							<field name="day_amount" sum="day_amount"/>
+							<field name="day_remaining_amount" sum="day_remaining_amount"/>
+							<field name="total_amount" sum="total_amount" />
+							<field name="previous_advance" sum="previous_advance"/>
+							<field name="current_loan" sum="current_loan"/>
+							<field name="kharcha" sum="advance"/>
+							<field name="loan" sum="loan"/>
+							<field name="epf" sum="epf"/>
+							<field name="tds" invisible="1"/>
+							<field name="panalty" sum="panalty"/>
+							<field name="security" sum="security"/>
+							<field name="telephone" sum="telephone"/>
+							<field name="reward" invisible="1"/>
+							<field name="grand_total" sum="grand_total"/>
+							<field name="rnd_grand_total" sum="rnd_grand_total"/>
+							<field name="difference" sum="difference" />
+							<field name="reason" />
+							<field name="state" invisible="1"/>
+							<field name="salary_type" invisible="1"/>
+							<field name="type"/>
+							<field name="employee_type" invisible="1"/>
+						</tree>
+					</field>
+					<button string="Update New Salary" name="update_new_salary" type="object" icon="gtk-go-forward"/>
+				</form>
+				</field>
+			</record>
+			
+			<record id="wiz_salary_payment_action" model="ir.actions.act_window">
+		   		<field name="name">Individual Salary Payment</field>
+	            <field name="type">ir.actions.act_window</field>
+	            <field name="res_model">wiz.salary.payment</field>
+	            <field name="view_mode">form</field>
+	            <field name="target">new</field>
+	            <field name="view_type">form</field>
+	            <field name="view_id" ref="wiz_salary_payment_form_view"/>  
+            </record>
+            
+         <!--   <menuitem id="wiz_salary_payment_sub_menu_hr" parent="menu_hr_salary" name="Individual Salary Payment" action="wiz_salary_payment_action" sequence="12" groups="base.group_update_attendance"/> -->
+           
+	</data>
+</openerp>

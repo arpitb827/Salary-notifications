@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data noupdate="0">
+
+    <record id="base.group_salary_user" model="res.groups">
+        <field name="name">User - Salary Only</field>
+    </record>
+    
+    <record id="base.group_salary_manager" model="res.groups">
+        <field name="name">Salary Manager</field>
+    </record>
+    
+    <record id="base.group_deduction_manager" model="res.groups">
+        <field name="name">Deduction Manager</field>
+    </record>
+    
+    <record id="base.group_salary_reset" model="res.groups">
+        <field name="name">Salary Re-set</field>
+    </record>
+    
+	<record id="base.group_salary_paid" model="res.groups">
+        <field name="name">Salary Paid</field>
+    </record>
+
+</data>
+</openerp>

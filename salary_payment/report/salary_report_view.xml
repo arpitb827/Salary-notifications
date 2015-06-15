@@ -1,0 +1,26 @@
+<?xml version ="1.0"?>
+<openerp>
+  	<data>
+		<report auto="False"  id="paybill_report_id"
+		model="salary.payment.line" 
+		name="paybill.report" 
+		rml="salary_payment/report/paybill.rml" 
+		string="Paybill Report"/>
+		
+		
+		
+		<report auto="False"  id="payslip_report_id"
+		model="employee.slip" 
+		name="payslip.report" 
+		rml="salary_payment/report/payslip.rml" 
+		string="Payslip Report"
+		menu="False"/>
+		
+		<report auto="False"  id="salary_sheet_report_id"
+		model="wiz.salary" 
+		name="salary.sheet.report" 
+		rml="salary_payment/report/salary_sheet.rml" 
+		string="salary sheet Report"/>
+		
+	</data>
+</openerp>

@@ -1,0 +1,9 @@
+import wiz_salary
+import report_type
+import budget
+import employee_slip
+import employee_salary
+import wiz_loan_stop
+#import wiz_salary_increment
+# import wiz_loan_deduction
+import wiz_salary_payment_report
